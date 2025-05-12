@@ -9,8 +9,10 @@ export const connectDb = async () => {
   // Connecting to a database is a side effect—it involves communication with an external system (MongoDB)
   try {
     //'await'  This is necessary because the connection request goes outside the application and takes time to resolve
-    const res = await mongoose.connect("mongodb://127.0.0.1:27017/e-commerce");
-    console.log("Database connected at port....", res.connection.port);
+    await mongoose
+      .connect("mongodb://127.0.0.1:27017/e-commerce")
+      .then(console.log("mongo db is connected"));
+    // console.log("Database connected at port....", res.connection.port);
   } catch (error) {
     // If the database connection fails, the error is caught and logged
     console.log("connectDb error....", error);

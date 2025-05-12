@@ -1,21 +1,21 @@
 import {
-  createUser,
-  deleteUser,
-  getAllUsers,
-  getSingleUser,
-  updateUser,
-} from "../controllers/usercontroller.js";
+  createProduct,
+  deleteProduct,
+  getAllProducts,
+  getSingleProduct,
+  updateProduct,
+} from "../controllers/productController.js";
 //sary controller methods ko routes may import kr deye
 
 import express from "express";
 const router = express.Router();
 
 // aor har particular function ko os k corresponding endpoint k sath bind kr deya.
-router.route("/users").get(getAllUsers);
-router.route("/user/:id").get(getSingleUser);
-router.route("/new/user").post(createUser);
-router.route("/user/:id").delete(deleteUser);
-router.route("/user/:id").put(updateUser);
+router.route("/products").get(getAllProducts);
+router.route("/product/:id").get(getSingleProduct);
+router.route("/product").post(createProduct);
+router.route("/product/:id").put(updateProduct);
+router.route("/product/:id").delete(deleteProduct);
 // routes aor controllers ke apus may link ban chuka hay.
 
 export default router;
